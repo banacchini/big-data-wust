@@ -1,0 +1,17 @@
+services:
+  host1:
+    build: .
+    networks:
+      labnet:
+        ipv4_address: 172.28.0.11
+  host2:
+    build: .
+    networks:
+      labnet:
+        ipv4_address: 172.28.0.12
+
+networks:
+  labnet:
+    ipam:
+      config:
+        - subnet: 172.28.0.0/24
