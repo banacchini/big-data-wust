@@ -14,4 +14,4 @@ if [ -z "$pids" ]; then
 fi
 
 kill $pids # bez "" żeby bash mógł rozbić PIDy na osobne argumenty (pgrep zwraca je w jednej linii, a kill wymaga osobnych argumentów)
-echo $pids
+echo "$pids terminated"
