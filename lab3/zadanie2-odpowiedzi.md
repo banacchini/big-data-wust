@@ -11,7 +11,11 @@
 ```
 docker run --rm ascii-banner /app/inny_plik.txt
 ```
-- `ENTRYPOINT` - trzeba dodać flagę `--entrypoint` -  przyjmuje tylko  program - 
+- `ENTRYPOINT` - trzeba dodać flagę `--entrypoint` -  przyjmuje tylko  program
+
+```
+docker run --rm --entrypoint /bin/sh ascii-banner -c 'ls /app'
+```
 
 3) Jaka jest różnica między `ADD` a `COPY`?
 

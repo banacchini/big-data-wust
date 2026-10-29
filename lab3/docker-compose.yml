@@ -30,14 +30,7 @@ services:
 
   checker:
     image: curlimages/curl:latest
-    entrypoint: ["/bin/sh", "-c"]
-    command:
-      - >
-        while true; do
-        if curl -fsS http://load-balancer/; then echo "[checker] OK";
-        else echo "[checker] FAIL"; fi;
-        sleep 5;
-        done
+    command: sh -c 'while true; do curl -fs http://load-balancer/ || echo FAIL; sleep 5; done'
     depends_on:
       - load-balancer
     restart: unless-stopped
